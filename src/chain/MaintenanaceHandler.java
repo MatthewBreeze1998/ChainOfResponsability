@@ -9,6 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public class MaintenanaceHandler {
+public class MaintenanaceHandler implements Chainable 
+{
     
 }

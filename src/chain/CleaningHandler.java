@@ -10,6 +10,7 @@ package chain;
  *
  * @author t7077260
  */
-public class CleaningHandler {
+public class CleaningHandler implements Chainable 
+{
     
 }

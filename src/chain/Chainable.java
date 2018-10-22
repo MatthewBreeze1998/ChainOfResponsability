@@ -9,6 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public interface Chainable {
+public interface Chainable 
+{
     
 }

@@ -10,6 +10,7 @@ package chain;
  *
  * @author t7077260
  */
-public class RampHandler {
+public class RampHandler implements Chainable
+{
     
 }

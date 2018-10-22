@@ -9,6 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public class FuelHandler {
+public class FuelHandler implements Chainable 
+{
     
 }

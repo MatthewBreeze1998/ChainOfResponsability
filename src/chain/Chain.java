@@ -9,13 +9,12 @@ package chain;
  *
  * @author t7077260 Matthew Breeze
  */
-public class Chain {
+public class Chain 
+{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+ 
     }
     
 }

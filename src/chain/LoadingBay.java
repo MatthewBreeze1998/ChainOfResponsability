@@ -10,10 +10,14 @@ package chain;
  * @author t7077260
  */
 public class LoadingBay 
-{
+{       
+  Boolean isAval ;  
+  public String plane ;
+  enum loadingBayType{};
+  String location;
+  
+  
     
     
-    
-    
-    
+        
 }
