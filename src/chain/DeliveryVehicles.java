@@ -28,16 +28,44 @@ public class DeliveryVehicles
        while(type.RAMP != null) 
        {
           
-           if(this.type.RAMP.)
-           {
-               
-           }
+        
        
        }
        return type.RAMP.toString();
            
            
     }
-   
+   public String checkFuel()
+    {
+       while(type.RAMP != null) 
+       {
+          
+        
+       
+       }
+       return type.RAMP.toString();
     
+    }    
+   
+   public String checkMaint()
+    {
+       while(type.RAMP != null) 
+       {
+          
+        
+       
+       }
+       return type.RAMP.toString();
+    }
+   
+    public String checkClenaing()
+    {
+       while(type.RAMP != null) 
+       {
+          
+        
+       
+       }
+       return type.RAMP.toString();
+    }
 }

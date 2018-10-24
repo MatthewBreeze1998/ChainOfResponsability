@@ -9,7 +9,8 @@ package chain;
  *
  * @author t7077260
  */
-public enum VehicleType {
+public enum VehicleType 
+{
     CLEANING,
     RAMP,
     CATERING,
