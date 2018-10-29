@@ -9,20 +9,9 @@ package chain;
  *
  * @author t7077260
  */
-public class LoadingBayHandler implements Chainable
+public class LoadingBayHandler 
 {
-
-    @Override
-    public void processLoadingBay(LoadingBay plane) 
-    {
-        
-    }
-
-    @Override
-    public void setLoadingBayNextHandler(LoadingBay next) 
-    {
-        
-    }
     
+}   
 
-}
+
