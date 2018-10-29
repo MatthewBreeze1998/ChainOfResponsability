@@ -11,5 +11,10 @@ package chain;
  */
 public interface Chainable 
 {
-    
+   
+   public void processLoadingBay(LoadingBay plane);  
+   public void setLoadingBayNextHandler(LoadingBay next);  
+   
+   
+   
 }

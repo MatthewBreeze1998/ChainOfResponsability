@@ -16,7 +16,8 @@ public class LoadingBay
   enum loadingBayType{};
   String location;
 
-    public LoadingBay(String location) {
+    public LoadingBay(String location) 
+    {
         this.location = location;
     }
 
