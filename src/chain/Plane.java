@@ -18,6 +18,10 @@ public class Plane
     private String maintenance;
     private String cleaning;
 
+   
+
+    
+
     /**
      * @return the fuel
      */
