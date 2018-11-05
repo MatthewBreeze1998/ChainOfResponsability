@@ -9,12 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public interface Chainable  
+public class Vehical 
 {
-   
-   public Vehical vehcial(Plane plane);  
-   public void AddNext(LoadingBay next);  
-   
-   
-   
+   String location ; 
 }

@@ -14,7 +14,7 @@ public class Plane
     private  int fuel;
     private String fuelType;
     private int foodQty;
-    private String rampType;
+    private  RampEnum rampType;
     private String maintenance;
     private String cleaning;
 
@@ -67,14 +67,14 @@ public class Plane
     /**
      * @return the rampType
      */
-    public String getRampType() {
+    public RampEnum getRampType() {
         return rampType;
     }
 
     /**
      * @param rampType the rampType to set
      */
-    public void setRampType(String rampType) {
+    public void setRampType(RampEnum rampType) {
         this.rampType = rampType;
     }
 

@@ -9,12 +9,9 @@ package chain;
  *
  * @author t7077260
  */
-public enum VehicleType 
+public enum RampEnum 
 {
-    CLEANING,
-    RAMP,
-    CATERING,
-    FUEL,
-    MAINTENANCE
+    closed,
+    open
     
 }

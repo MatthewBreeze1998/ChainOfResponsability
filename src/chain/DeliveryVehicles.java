@@ -51,16 +51,6 @@ public class DeliveryVehicles extends Plane implements Chainable
      
      }
      
-          
-     
-     
-          
-     
-     
-          
-     
-     
-     
        return "";     
     }
    public String checkFuel()
