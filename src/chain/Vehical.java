@@ -9,7 +9,18 @@ package chain;
  *
  * @author t7077260
  */
-public class Vehical 
+public abstract class Vehical implements Chainable
 {
    String location ; 
+   Chainable next;
+   
+   
+ 
+
+    @Override
+    public void AddNext(Chainable next) 
+    {
+        this.next = next;
+    }
+   
 }

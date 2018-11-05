@@ -13,16 +13,37 @@ package chain;
 public class Ramp extends Vehical
 {
 
+    RampEnum r ;
+
+    public Ramp(RampEnum r) {
+        this.r = r;
+    }
     
-    
-    @Override
-    public Vehical vehcial(Plane plane) {
-        
+   
+    public Vehical Handle(Plane plane) 
+    {
+        if(r == plane.getRampType())
+        {
+           return this; 
+        }
+        else if(next != null) 
+        {
+           return next.Handle(plane);
+        }
+        else
+        {
+            return null;
+        }
     }
 
+    
     @Override
-    public void AddNext(LoadingBay next) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void AddNext(Chainable next) 
+    {
+        if(next instanceof Ramp)
+        {
+            this.next = next;
+        }
     }
     
 

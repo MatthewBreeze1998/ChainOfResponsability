@@ -12,8 +12,8 @@ package chain;
 public interface Chainable  
 {
    
-   public Vehical vehcial(Plane plane);  
-   public void AddNext(LoadingBay next);  
+   public Vehical Handle(Plane plane);  
+   public void AddNext(Chainable next);  
    
    
    

@@ -11,7 +11,7 @@ package chain;
  */
 public enum RampEnum 
 {
-    closed,
-    open
+    Closed,
+    Open
     
 }

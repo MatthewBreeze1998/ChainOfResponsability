@@ -11,15 +11,21 @@ package chain;
  */
 public class LoadingBay 
 {       
+  DeliveryVehicles manager;
   Boolean isAval ;  
-  public String plane ;
-  enum loadingBayType{};
+  Plane plane ;
   String location;
-
+  Ramp ramp; 
+  
+  
     public LoadingBay(String location) 
     {
         this.location = location;
     }
 
+    public void getRamp()
+    {
+        ramp = manager.getRamp(plane);
+    }
         
 }
