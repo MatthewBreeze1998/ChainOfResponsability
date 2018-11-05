@@ -11,16 +11,19 @@ package chain;
  */
 public class Cleaning extends Vehical
 {
+
+    
     CleaningEnum r;
 
     public Cleaning(CleaningEnum r) {
         this.r = r;
     }
     
-            
-    
     @Override
+    
+    
     public Vehical Handle(Plane plane) 
+    
     {
         {
         if(r == plane.getCleaning())
@@ -35,7 +38,6 @@ public class Cleaning extends Vehical
         {
             return null;
         }
-    }
-        
+        }
     }
 }

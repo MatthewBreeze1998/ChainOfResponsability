@@ -11,12 +11,23 @@ package chain;
  */
 public class LoadingBay 
 {       
+  
   DeliveryVehicles manager;
   Boolean isAval ;  
   Plane plane ;
   String location;
   Ramp ramp; 
+  Cleaning clenaing;
+  Fuel fuel;
+  Maintenance maintenance;
+  Catering catering;
   
+  LoadingBayEnum r;
+
+    public LoadingBay() 
+    {
+        this.r = r;
+    }
   
     public LoadingBay(String location) 
     {
@@ -27,5 +38,22 @@ public class LoadingBay
     {
         ramp = manager.getRamp(plane);
     }
-        
+     
+    public void getCleaning()
+    {
+        clenaing = manager.getCleaning(plane);
+    }
+    public void getfuel()
+    {
+        fuel = manager.getFuel(plane);
+    }
+    public void getMaintenance()
+    {
+        maintenance = manager.getMaintenance(plane);
+    }
+    public void getCatering()
+    {
+        catering = manager.getCatering(plane);
+    }
+    
 }
