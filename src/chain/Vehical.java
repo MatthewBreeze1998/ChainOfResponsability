@@ -14,9 +14,10 @@ public abstract class Vehical implements Chainable
    String location ; 
    Chainable next;
    
-   
- 
-
+    /**
+     *
+     * @param next
+     */
     @Override
     public void AddNext(Chainable next) 
     {

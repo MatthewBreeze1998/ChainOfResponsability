@@ -9,10 +9,9 @@ package chain;
  *
  * @author Matty
  */
-public enum LoadingBayEnum 
+public enum PlaneSizeEnum 
 {
     Small,
-    medium,
+    Medium,
     large
-    
 }

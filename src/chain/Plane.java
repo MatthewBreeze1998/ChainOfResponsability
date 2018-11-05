@@ -11,6 +11,8 @@ package chain;
  */
 public class Plane 
 {
+    
+    private PlaneSizeEnum planeSize;
     private  int fuel;
     private FuelEnum fuelType;
     private int foodQty;
@@ -106,6 +108,12 @@ public class Plane
     public void setCleaning(CleaningEnum cleaning) {
         this.cleaning = cleaning;
     }
-    
+     public PlaneSizeEnum getPlaneSize() {
+        return planeSize;
+    }
+
+    public void setPlaneSize(PlaneSizeEnum planeSize) {
+        this.planeSize = planeSize;
+    }
     
 }

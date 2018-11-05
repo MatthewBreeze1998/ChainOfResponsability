@@ -9,10 +9,13 @@ package chain;
  *
  * @author Matty
  */
-public enum LoadingBayEnum 
+public abstract class Bay implements Chainable 
 {
-    Small,
-    medium,
-    large
+    Chainable next;
     
+    @Override
+    public void AddNext(Chainable next) 
+    {
+        this.next = next;
+    }
 }
