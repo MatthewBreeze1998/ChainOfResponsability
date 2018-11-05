@@ -9,7 +9,28 @@ package chain;
  *
  * @author t7077260
  */
-public class Catering 
+public class Catering extends Vehical
 {
+
+    
+    @Override
+    public Vehical Handle(Plane plane) 
+    {
+        {
+        if(plane.getFoodQty() < 100)
+        {
+           return this; 
+        }
+        else if(next != null) 
+        {
+           return next.Handle(plane);
+        }
+        else
+        {
+            return null;
+        }
+    }
+        
+    }
     
 }

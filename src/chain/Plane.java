@@ -12,11 +12,11 @@ package chain;
 public class Plane 
 {
     private  int fuel;
-    private String fuelType;
+    private FuelEnum fuelType;
     private int foodQty;
     private  RampEnum rampType;
-    private String maintenance;
-    private String cleaning;
+    private MaintenanceEnum maintenance;
+    private CleaningEnum cleaning;
 
    
 
@@ -39,14 +39,15 @@ public class Plane
     /**
      * @return the fuelType
      */
-    public String getFuelType() {
+    public FuelEnum getFuelType() {
         return fuelType;
     }
 
     /**
      * @param fuelType the fuelType to set
      */
-    public void setFuelType(String fuelType) {
+    public void setFuelType(FuelEnum fuelType) 
+    {
         this.fuelType = fuelType;
     }
 
@@ -81,28 +82,28 @@ public class Plane
     /**
      * @return the maintenance
      */
-    public String getMaintenance() {
+    public MaintenanceEnum getMaintenance() {
         return maintenance;
     }
 
     /**
      * @param maintenance the maintenance to set
      */
-    public void setMaintenance(String maintenance) {
+    public void setMaintenance(MaintenanceEnum maintenance) {
         this.maintenance = maintenance;
     }
 
     /**
      * @return the cleaning
      */
-    public String getCleaning() {
+    public CleaningEnum getCleaning() {
         return cleaning;
     }
 
     /**
      * @param cleaning the cleaning to set
      */
-    public void setCleaning(String cleaning) {
+    public void setCleaning(CleaningEnum cleaning) {
         this.cleaning = cleaning;
     }
     

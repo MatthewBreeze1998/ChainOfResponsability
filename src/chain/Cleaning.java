@@ -9,7 +9,33 @@ package chain;
  *
  * @author t7077260
  */
-public class Cleaning 
+public class Cleaning extends Vehical
 {
+    CleaningEnum r;
+
+    public Cleaning(CleaningEnum r) {
+        this.r = r;
+    }
     
+            
+    
+    @Override
+    public Vehical Handle(Plane plane) 
+    {
+        {
+        if(r == plane.getCleaning())
+        {
+           return this; 
+        }
+        else if(next != null) 
+        {
+           return next.Handle(plane);
+        }
+        else
+        {
+            return null;
+        }
+    }
+        
+    }
 }
