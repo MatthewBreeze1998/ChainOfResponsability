@@ -9,7 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public class Fuel extends Vehical 
+public class Fuel extends NextCheck 
 {
 
     
@@ -26,7 +26,7 @@ public class Fuel extends Vehical
     
     
     @Override
-    public Vehical Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
     {
         
         if(plane.getFuel() < 100)

@@ -9,22 +9,24 @@ package chain;
  *
  * @author t7077260
  */
-public abstract class LoadingBayHandler extends Bay
+public class LoadingBayHandler extends NextCheck
 {
     LoadingBayEnum lb;
     PlaneSizeEnum ps;
-     public LoadingBayHandler(LoadingBayEnum lb, PlaneSizeEnum ps) {
+     
+    public LoadingBayHandler(LoadingBayEnum lb, PlaneSizeEnum ps) 
+    {
         this.lb = lb;
         this.ps = ps;
     }
-    
+
     /**
      *
      * @param plane
      * @return
      */
-    @Override
-    public LoadingBay Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
+    
     {
         {
         if(lb.equals(ps))
@@ -33,17 +35,14 @@ public abstract class LoadingBayHandler extends Bay
         }
         else if(next != null) 
         {
-           return next.Handle(LoadingBay);
+           return next.Handle(plane);
         }
         else
         {
             return null;
         }
+        }
     }
-        
-    }
-
-   
 }   
 
 

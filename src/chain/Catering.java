@@ -9,12 +9,16 @@ package chain;
  *
  * @author t7077260
  */
-public class Catering extends Vehical
+public class Catering extends NextCheck
 {
 
-    
+    /**
+     *
+     * @param plane
+     * @return
+     */
     @Override
-    public Vehical Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
     {
         {
         if(plane.getFoodQty() < 100)

@@ -9,7 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public abstract class Vehical implements Chainable
+public abstract class NextCheck implements Chainable
 {
    String location ; 
    Chainable next;

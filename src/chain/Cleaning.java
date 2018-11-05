@@ -9,7 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public class Cleaning extends Vehical
+public class Cleaning extends NextCheck
 {
 
     
@@ -22,7 +22,7 @@ public class Cleaning extends Vehical
     @Override
     
     
-    public Vehical Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
     
     {
         {

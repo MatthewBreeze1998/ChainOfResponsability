@@ -11,6 +11,7 @@ package chain;
  */
 public abstract class Bay implements Chainable 
 {
+    String location ;
     Chainable next;
     
     @Override

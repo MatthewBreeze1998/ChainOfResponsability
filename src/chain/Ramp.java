@@ -10,7 +10,7 @@ package chain;
  * @author t7077260
  */
 
-public class Ramp extends Vehical
+public class Ramp extends NextCheck
 {
 
     RampEnum r ;
@@ -20,7 +20,7 @@ public class Ramp extends Vehical
     }
     
    
-    public Vehical Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
     {
         if(r == plane.getRampType())
         {

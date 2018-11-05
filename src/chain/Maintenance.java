@@ -9,7 +9,7 @@ package chain;
  *
  * @author t7077260
  */
-public class Maintenance extends Vehical 
+public class Maintenance extends NextCheck 
 {
 
     MaintenanceEnum r;
@@ -20,7 +20,7 @@ public class Maintenance extends Vehical
     
     
     @Override
-    public Vehical Handle(Plane plane) 
+    public NextCheck Handle(Plane plane) 
     {
        {
         if(r == plane.getMaintenance())

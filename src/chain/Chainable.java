@@ -12,7 +12,7 @@ package chain;
 public interface Chainable  
 {
    
-   public Vehical Handle(Plane plane);  
+   public NextCheck Handle(Plane plane);  
    public void AddNext(Chainable next);  
    
    
