@@ -15,7 +15,7 @@ public class Planetest
 {
 
    
-    public planeTest()
+    public Planetest()
     {
         /**
      * Testing constructor, should assign default description if null.
@@ -33,7 +33,7 @@ public class Planetest
          */
         @Test
         public void testEmptyDescription() {
-            final Malfunction m = new Malfunction(Severity.HIGH, "");
+            final Plane m = new Plane(Severity.HIGH, "");
             final String expectedOutcome = "No description available. Probably serious.";
             final String actualOutcome = m.getDescription();
             assertEquals(expectedOutcome, actualOutcome);
