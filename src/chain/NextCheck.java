@@ -13,6 +13,10 @@ public abstract class NextCheck implements Chainable
 {
    String location ; 
    Chainable next;
+
+    public Chainable getNext() {
+        return next;
+    }
    
     /**
      *

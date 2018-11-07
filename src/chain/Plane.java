@@ -21,6 +21,17 @@ public class Plane
     private CleaningEnum cleaning;
 
    
+    public Plane(PlaneSizeEnum planeSize, int fuel, FuelEnum fuelType, int foodQty, RampEnum rampType, MaintenanceEnum maintenance, CleaningEnum cleaning) {
+        this.planeSize = planeSize;
+        this.fuel = fuel;
+        this.fuelType = fuelType;
+        this.foodQty = foodQty;
+        this.rampType = rampType;
+        this.maintenance = maintenance;
+        this.cleaning = cleaning;
+    }
+
+   
 
     
 

@@ -16,14 +16,10 @@ public class Fuel extends NextCheck
     
     FuelEnum r; 
 
-    public Fuel() 
-    {
-     this.r = r;
-    
-    }
+ 
 
     public Fuel(FuelEnum fuelEnum) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.r = fuelEnum;
     }
 
    
@@ -62,7 +58,7 @@ public class Fuel extends NextCheck
     @Override
     public void AddNext(Chainable next) 
     {
-        if(next instanceof Ramp)
+        if(next instanceof Fuel)
         {
             this.next = next;
         }

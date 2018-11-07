@@ -6,47 +6,55 @@ package chain;
  */
 public class DeliveryVehicles {
 
-    Ramp firstRamp;
-    Cleaning firstCleaning;
-    Fuel firstFuel;
-    Maintenance firstMaintenance;
-    Catering firstCatering;
+    static Ramp firstRamp;
+   static Cleaning firstCleaning;
+   static Fuel firstFuel;
+   static Maintenance firstMaintenance;
+   static Catering firstCatering;
 
     public DeliveryVehicles(Ramp firstRamp, Cleaning firstCleaning, Fuel firstFuel, Maintenance firstMaintenance, Catering firstCatering) {
-        this.firstRamp = firstRamp;
-        this.firstCleaning = firstCleaning;
-        this.firstCatering = firstCatering;
-        this.firstFuel = firstFuel;
-        this.firstMaintenance = firstMaintenance;
+        DeliveryVehicles.firstRamp = firstRamp;
+        DeliveryVehicles.firstCleaning = firstCleaning;
+        DeliveryVehicles.firstCatering = firstCatering;
+        DeliveryVehicles.firstFuel = firstFuel;
+        DeliveryVehicles.firstMaintenance = firstMaintenance;
     }
 
-    public Ramp getRamp(Plane plane) {
-
-        return (Ramp) firstRamp.Handle(plane);
-
+    
+    
+    public static Ramp getRamp(Plane plane) {
+        if (firstRamp != null) {
+            return (Ramp) firstRamp.Handle(plane);
+        }
+        return null;
     }
 
-    public Cleaning getCleaning(Plane plane) {
-
-        return (Cleaning) firstCleaning.Handle(plane);
-
+    public static Cleaning getCleaning(Plane plane) {
+        if (firstCleaning != null) {
+            return (Cleaning) firstCleaning.Handle(plane);
+        }
+        return null;
     }
 
-    public Fuel getFuel(Plane plane) {
-
-        return (Fuel) firstFuel.Handle(plane);
-
+    public static Fuel getFuel(Plane plane) {
+        if (firstFuel != null) {
+            return (Fuel) firstFuel.Handle(plane);
+        }
+        return null;
     }
 
-    public Catering getCatering(Plane plane) {
-
-        return (Catering) firstCatering.Handle(plane);
-
+    public static Catering getCatering(Plane plane) {
+        if (firstCatering != null) {
+            return (Catering) firstCatering.Handle(plane);
+        }
+        return null;
     }
-     
-    public Maintenance getMaintenance(Plane plane) {
 
-        return (Maintenance) firstMaintenance.Handle(plane);
+    public static Maintenance getMaintenance(Plane plane) {
+        if (firstMaintenance != null) {
+            return (Maintenance) firstMaintenance.Handle(plane);
+        }
+        return null;
 
     }
 

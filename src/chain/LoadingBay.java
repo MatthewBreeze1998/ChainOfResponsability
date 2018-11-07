@@ -9,24 +9,23 @@ package chain;
  *
  * @author t7077260
  */
-public class LoadingBay 
+public class LoadingBay extends NextCheck
 {       
  
-  DeliveryVehicles manager;
+  //DeliveryVehicles manager;
   Boolean isAval ;  
-  Plane plane ;
+  Plane plane;
   String location;
   Ramp ramp; 
   Cleaning clenaing;
   Fuel fuel;
   Maintenance maintenance;
   Catering catering;
-  
-  LoadingBayEnum r;
+  LoadingBayEnum size;
 
-    public LoadingBay() 
+    public LoadingBay(LoadingBayEnum size) 
     {
-        this.r = r;
+        this.size = size;
     }
   
     public LoadingBay(String location) 
@@ -34,26 +33,58 @@ public class LoadingBay
         this.location = location;
     }
 
-    public void getRamp()
+    public Ramp getRamp()
     {
-        ramp = manager.getRamp(plane);
+        return ramp;
     }
      
-    public void getCleaning()
+    public Cleaning getCleaning()
     {
-        clenaing = manager.getCleaning(plane);
+        return clenaing;
     }
-    public void getfuel()
+    public Fuel getfuel()
     {
-        fuel = manager.getFuel(plane);
+        return fuel;
     }
-    public void getMaintenance()
+    public Maintenance getMaintenance()
     {
-        maintenance = manager.getMaintenance(plane);
+        return maintenance;
     }
-    public void getCatering()
+    public Catering getCatering()
     {
-        catering = manager.getCatering(plane);
+        return catering;
+    }
+    
+    public void getVehicals()
+    {
+        if(plane != null)
+        {
+            ramp = DeliveryVehicles.getRamp(plane);
+            clenaing = DeliveryVehicles.getCleaning(plane);
+            fuel = DeliveryVehicles.getFuel(plane);
+            maintenance = DeliveryVehicles.getMaintenance(plane);
+            catering = DeliveryVehicles.getCatering(plane);
+            
+        }
+    }
+
+    @Override
+    public NextCheck Handle(Plane plane) 
+    {
+        if(size.ordinal() == plane.getPlaneSize().ordinal())
+        {
+            this.plane = plane;
+            return this; 
+        }
+        else if(next != null) 
+        {
+           return next.Handle(plane);
+        }
+        else
+        {
+            return null;
+        }
+        
     }
     
 }

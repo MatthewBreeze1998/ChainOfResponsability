@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package chain;
+
+/**
+ *
+ * @author t7077260
+ */
+public class Arc {
+
+    static LoadingBay FirstLoadingBay;
+
+    public static void setFirstLoadingBay(LoadingBay FirstLoadingBay) {
+        Arc.FirstLoadingBay = FirstLoadingBay;
+    }
+
+    public static void handlePlane(Plane plane) {
+        if (FirstLoadingBay != null) {
+            LoadingBay fl = (LoadingBay) FirstLoadingBay.Handle(plane);
+            fl.getVehicals();
+        }
+
+    }
+
+}
