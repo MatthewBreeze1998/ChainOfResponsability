@@ -21,7 +21,7 @@ public class Planetest
      * Testing constructor, should assign default description if null.
      */
     @Test
-    public void testNullDescription() {
+    public static void testNullDescription() {
             final Plane m = new Plane(Severity.HIGH, null);
             final String expectedOutcome = "No description available. Probably serious.";
             final String actualOutcome = m.getDescription();

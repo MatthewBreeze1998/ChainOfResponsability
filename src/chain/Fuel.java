@@ -30,7 +30,7 @@ public class Fuel extends NextCheck
     {
         
         if(plane.getFuel() < 100)
-        {
+       {
             if(r == plane.getFuelType())
             {
                return this; 
@@ -44,10 +44,10 @@ public class Fuel extends NextCheck
                 return null;
             }
         }
-        else
-        {
-            return null;
-        }
+       else
+      {
+           return null;
+       }
         
     
     }

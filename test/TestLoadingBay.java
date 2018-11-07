@@ -43,46 +43,72 @@ public class TestLoadingBay {
 
     @Test
     public void GetRamp() {
-         Plane p = new Plane(PlaneSizeEnum.large , 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium , CleaningEnum.light );
-         
-         Ramp ramp1 = new Ramp(RampEnum.Open);
-         Ramp ramp2 = new Ramp(RampEnum.Closed);
-         
-         ramp1.AddNext(ramp2);
-         
-         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
-         DeliveryVehicles manager = new DeliveryVehicles(ramp1, null, null, null, null);
-         Arc.setFirstLoadingBay(bay);
-         Arc.handlePlane(p);
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
+
+        Ramp ramp1 = new Ramp(RampEnum.Open);
+        Ramp ramp2 = new Ramp(RampEnum.Closed);
+
+        ramp1.AddNext(ramp2);
+
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        DeliveryVehicles manager = new DeliveryVehicles(ramp1, null, null, null, null);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
         Ramp rampExpected = ramp1;
-        Ramp  rampActual = bay.getRamp();
-        
-        
+        Ramp rampActual = bay.getRamp();
+
         assertEquals(rampExpected, rampActual);
     }
+        @Test
+   public void getFuel() {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
+        
+        Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
+        Fuel fuel2 = new Fuel(FuelEnum.Biokerosene);
+        Fuel fuel3 = new Fuel(FuelEnum.Jetfuel);
+        Fuel fuel4 = new Fuel(FuelEnum.Kerosenegasoline);
+
+        fuel1.AddNext(fuel2);
+        fuel2.AddNext(fuel3);
+        fuel3.AddNext(fuel4);
+        
+        DeliveryVehicles manager = new DeliveryVehicles(null, null, fuel1, null, null);
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Fuel fuelExpected = fuel1;
+        Fuel fuelActual = bay.getfuel();
+
+        //assertEquals(fuelExpected, fuelActual);
+        
     
-    @Test
-    public void getFuel()
-    {
-         Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
-         Fuel fuel2 = new Fuel(FuelEnum.Biokerosene);
-         Fuel fuel3 = new Fuel(FuelEnum.Jetfuel);
-         Fuel fuel4 = new Fuel(FuelEnum.Kerosenegasoline);
+   }
+
+        public void getMaintenance(){
+         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
          
-         fuel1.AddNext(fuel2);
-         fuel2.AddNext(fuel3);
-         fuel3.AddNext(fuel4);
-    }    
-         /*
          Maintenance Maintenance1 = new Maintenance(MaintenanceEnum.High);
          Maintenance Maintenance2 = new Maintenance(MaintenanceEnum.Medium);
          Maintenance Maintenance3 = new Maintenance(MaintenanceEnum.severe);
          Maintenance Maintenance4 = new Maintenance(MaintenanceEnum.Low);
-         
+        
          Maintenance1.AddNext(Maintenance2);
          Maintenance2.AddNext(Maintenance3);
          Maintenance3.AddNext(Maintenance4);
-         
+                
+        DeliveryVehicles manager = new DeliveryVehicles(null, null, null, Maintenance1, null);
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Maintenance maintenanceExpected = Maintenance1;
+        Maintenance maintenanceActual = bay.getMaintenance();
+
+        assertEquals(maintenanceExpected, maintenanceActual); 
+        }
+        
+        public void getCleaning(){
+          Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);  
+       
          Cleaning Cleaning1 = new Cleaning(CleaningEnum.biorisk);
          Cleaning Cleaning2 = new Cleaning(CleaningEnum.heavy);
          Cleaning Cleaning3 = new Cleaning(CleaningEnum.light);
@@ -92,12 +118,21 @@ public class TestLoadingBay {
          Cleaning2.AddNext(Cleaning3);
          Cleaning3.AddNext(Cleaning4);
          
-         */
-    }
+        DeliveryVehicles manager = new DeliveryVehicles(null, Cleaning1, null, null, null);
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Cleaning CleaningExpected = Cleaning1;
+        Cleaning CleaningActual = bay.getCleaning();
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+        assertEquals(CleaningExpected, CleaningActual);
+        }
+     
+}
+
+// TODO add test methods here.
+// The methods must be annotated with annotation @Test. For example:
+//
+// @Test
+// public void hello() {}
 
