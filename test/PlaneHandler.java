@@ -1,32 +1,17 @@
  
+import chain.Catering;
 import chain.Plane;
 import chain.Chainable;
 import chain.Fuel;
 import chain.FuelEnum;
-
-/*
-import uk.ac.tees.standard.cor1.username.Malfunction;
-import uk.ac.tees.standard.cor1.username.Severity;
-import uk.ac.tees.standard.cor1.username.ServiceRobot;
-import uk.ac.tees.standard.cor1.username.FileUtility;
-import uk.ac.tees.standard.cor1.username.SpaceMonkey;
-import uk.ac.tees.standard.cor1.username.Engineer;
+import chain.Maintenance;
+import chain.MaintenanceEnum;
+import chain.Ramp;
+import chain.RampEnum;
 import java.io.File;
 import org.junit.Test;
-import uk.ac.tees.standard.cor1.username.Captain;
-import uk.ac.tees.standard.cor1.username.Captain;
-import uk.ac.tees.standard.cor1.username.Engineer;
-import uk.ac.tees.standard.cor1.username.Engineer;
-import uk.ac.tees.standard.cor1.username.Malfunction;
-import uk.ac.tees.standard.cor1.username.Malfunction;
-import uk.ac.tees.standard.cor1.username.ServiceRobot;
-import uk.ac.tees.standard.cor1.username.ServiceRobot;
-import uk.ac.tees.standard.cor1.username.Severity;
-import uk.ac.tees.standard.cor1.username.Severity;
-import uk.ac.tees.standard.cor1.username.SpaceMonkey;
-import uk.ac.tees.standard.cor1.username.SpaceMonkey;
 import java.io.File;
-*/
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -41,9 +26,9 @@ public class PlaneHandler
 {
   // Instanciate malfunction handlers
         final  Fuel sm = new Fuel(FuelEnum.Jetfuel) ;
-        final ServiceRobot sr = new ServiceRobot(Severity.LOW);
-        final Engineer e = new Engineer(Severity.MEDIUM);
-        final Captain c = new Captain(Severity.HIGH);
+        final Maintenance sr = new Maintenance(MaintenanceEnum.Low);
+        final Catering e = new Catering();
+        final Ramp c = new Ramp(RampEnum.Open);
         
         // Construct chain of responsibility
         sm.setNextHandler(sr); 

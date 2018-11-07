@@ -1,3 +1,6 @@
+
+import chain.Plane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,7 +22,7 @@ public class Planetest
      */
     @Test
     public void testNullDescription() {
-            final Malfunction m = new Malfunction(Severity.HIGH, null);
+            final Plane m = new Plane(Severity.HIGH, null);
             final String expectedOutcome = "No description available. Probably serious.";
             final String actualOutcome = m.getDescription();
             assertEquals(expectedOutcome, actualOutcome);
