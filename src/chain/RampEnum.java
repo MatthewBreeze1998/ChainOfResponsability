@@ -9,9 +9,9 @@ package chain;
  *
  * @author t7077260
  */
-public enum RampEnum 
+public enum RampEnum
 {
     Closed,
     Open
-    
+
 }

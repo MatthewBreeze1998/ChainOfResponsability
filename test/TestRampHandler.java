@@ -17,7 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Matty
  */
-public class TestRampHandler {
+public class TestRampHandler
+{
+
     @Test
     public void addRampToCahin()
     {
@@ -25,13 +27,12 @@ public class TestRampHandler {
         Ramp ramp2 = new Ramp(RampEnum.Open);
 
         ramp1.AddNext(ramp2);
-        
+
         Ramp rampExpected = ramp2;
-        Ramp rampActual = (Ramp)ramp1.getNext();
-        
+        Ramp rampActual = (Ramp) ramp1.getNext();
+
         assertEquals(rampExpected, rampActual);
     }
-
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

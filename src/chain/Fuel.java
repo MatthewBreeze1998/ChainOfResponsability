@@ -9,52 +9,43 @@ package chain;
  *
  * @author t7077260
  */
-public class Fuel extends NextCheck 
+public class Fuel extends NextCheck
 {
 
-    
-    
-    FuelEnum r; 
+    FuelEnum r;
 
- 
-
-    public Fuel(FuelEnum fuelEnum) {
+    public Fuel(FuelEnum fuelEnum)
+    {
         this.r = fuelEnum;
     }
 
-   
-    
-    
     @Override
-    public NextCheck Handle(Plane plane) 
+    public NextCheck Handle(Plane plane)
     {
-        
-        if(plane.getFuel() < 100)
-       {
-            if(r == plane.getFuelType())
+
+        if (plane.getFuel() < 100)
+        {
+            if (r == plane.getFuelType())
             {
-               return this; 
-            }
-            else if(next != null) 
+                return this;
+            } else if (next != null)
             {
-               return next.Handle(plane);
-            }
-              else
+                return next.Handle(plane);
+            } else
             {
                 return null;
             }
+        } else
+        {
+            return null;
         }
-       else
-      {
-         return null;
-      }
-        
-    
+
     }
+
     @Override
-    public void AddNext(Chainable next) 
+    public void AddNext(Chainable next)
     {
-        if(next instanceof Fuel)
+        if (next instanceof Fuel)
         {
             this.next = next;
         }

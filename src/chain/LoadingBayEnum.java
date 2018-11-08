@@ -9,10 +9,10 @@ package chain;
  *
  * @author Matty
  */
-public enum LoadingBayEnum 
+public enum LoadingBayEnum
 {
     Small,
     medium,
     large
-    
+
 }

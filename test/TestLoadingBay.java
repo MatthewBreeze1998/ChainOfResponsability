@@ -26,10 +26,12 @@ import static org.junit.Assert.*;
  *
  * @author t7077260
  */
-public class TestLoadingBay {
+public class TestLoadingBay
+{
 
     @Test
-    public void TestaddLoadingBay() {
+    public void TestaddLoadingBay()
+    {
         LoadingBay Bay1 = new LoadingBay(LoadingBayEnum.Small);
         LoadingBay Bay2 = new LoadingBay(LoadingBayEnum.large);
 
@@ -43,8 +45,9 @@ public class TestLoadingBay {
     }
 
     @Test
-    public void GetRamp() {
-        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);
+    public void GetRamp()
+    {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
 
         Ramp ramp1 = new Ramp(RampEnum.Open);
         Ramp ramp2 = new Ramp(RampEnum.Closed);
@@ -60,10 +63,12 @@ public class TestLoadingBay {
 
         assertEquals(rampExpected, rampActual);
     }
-        @Test
-         public void getFuel() {
+
+    @Test
+    public void getFuel()
+    {
         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
-        
+
         Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
         Fuel fuel2 = new Fuel(FuelEnum.Biokerosene);
         Fuel fuel3 = new Fuel(FuelEnum.Jetfuel);
@@ -72,32 +77,33 @@ public class TestLoadingBay {
         fuel1.AddNext(fuel2);
         fuel2.AddNext(fuel3);
         fuel3.AddNext(fuel4);
-        
+
         DeliveryVehicles manager = new DeliveryVehicles(null, null, fuel1, null, null);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
-        
+
         Arc.handlePlane(p);
         Fuel fuelExpected = fuel2;
         Fuel fuelActual = bay.getfuel();
 
         assertEquals(fuelExpected, fuelActual);
-        
-    
-   }
-         @Test
-        public void getMaintenance(){
-         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);
-         
-         Maintenance maintenance1 = new Maintenance(MaintenanceEnum.High);
-         Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Medium);
-         Maintenance maintenance3 = new Maintenance(MaintenanceEnum.severe);
-         Maintenance maintenance4 = new Maintenance(MaintenanceEnum.Low);
-        
-         maintenance1.AddNext(maintenance2);
-         maintenance2.AddNext(maintenance3);
-         maintenance3.AddNext(maintenance4);
-                
+
+    }
+
+    @Test
+    public void getMaintenance()
+    {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
+
+        Maintenance maintenance1 = new Maintenance(MaintenanceEnum.High);
+        Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Medium);
+        Maintenance maintenance3 = new Maintenance(MaintenanceEnum.severe);
+        Maintenance maintenance4 = new Maintenance(MaintenanceEnum.Low);
+
+        maintenance1.AddNext(maintenance2);
+        maintenance2.AddNext(maintenance3);
+        maintenance3.AddNext(maintenance4);
+
         DeliveryVehicles manager = new DeliveryVehicles(null, null, null, maintenance1, null);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
@@ -105,21 +111,23 @@ public class TestLoadingBay {
         Maintenance maintenanceExpected = maintenance2;
         Maintenance maintenanceActual = bay.getMaintenance();
 
-        assertEquals(maintenanceExpected, maintenanceActual); 
-        }
-        @Test
-        public void getCleaning(){
-          Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);  
-       
-         Cleaning Cleaning1 = new Cleaning(CleaningEnum.biorisk);
-         Cleaning Cleaning2 = new Cleaning(CleaningEnum.heavy);
-         Cleaning Cleaning3 = new Cleaning(CleaningEnum.light);
-         Cleaning Cleaning4 = new Cleaning(CleaningEnum.medium);
-         
-         Cleaning1.AddNext(Cleaning2);
-         Cleaning2.AddNext(Cleaning3);
-         Cleaning3.AddNext(Cleaning4);
-         
+        assertEquals(maintenanceExpected, maintenanceActual);
+    }
+
+    @Test
+    public void getCleaning()
+    {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
+
+        Cleaning Cleaning1 = new Cleaning(CleaningEnum.biorisk);
+        Cleaning Cleaning2 = new Cleaning(CleaningEnum.heavy);
+        Cleaning Cleaning3 = new Cleaning(CleaningEnum.light);
+        Cleaning Cleaning4 = new Cleaning(CleaningEnum.medium);
+
+        Cleaning1.AddNext(Cleaning2);
+        Cleaning2.AddNext(Cleaning3);
+        Cleaning3.AddNext(Cleaning4);
+
         DeliveryVehicles manager = new DeliveryVehicles(null, Cleaning1, null, null, null);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
@@ -128,28 +136,27 @@ public class TestLoadingBay {
         Cleaning CleaningActual = bay.getCleaning();
 
         assertEquals(CleaningExpected, CleaningActual);
-        }
-        @Test
-        public void geCatering()
-        {
-        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);     
+    }
+
+    @Test
+    public void geCatering()
+    {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
         Catering catering1 = new Catering(57);
         Catering catering2 = new Catering(100);
 
         catering1.AddNext(catering2);
-        
+
         DeliveryVehicles manager = new DeliveryVehicles(null, null, null, null, catering1);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
         Arc.handlePlane(p);
         Catering cateringExpected = catering2;
-        Catering cateringActual = (Catering)catering1.getNext();
-        
-        assertEquals(cateringExpected, cateringActual);  
-        }
-        
-        
-     
+        Catering cateringActual = (Catering) catering1.getNext();
+
+        assertEquals(cateringExpected, cateringActual);
+    }
+
 }
 
 // TODO add test methods here.

@@ -9,12 +9,11 @@ package chain;
  *
  * @author t7077260
  */
-public interface Chainable  
+public interface Chainable
 {
-   
-   public NextCheck Handle(Plane plane);  
-   public void AddNext(Chainable next);  
-   
-   
-   
+
+    public NextCheck Handle(Plane plane);
+
+    public void AddNext(Chainable next);
+
 }

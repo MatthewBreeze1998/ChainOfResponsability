@@ -14,40 +14,39 @@ public class Catering extends NextCheck
 
     int foodqty;
 
-    public Catering(int foodqty) {
+    public Catering(int foodqty)
+    {
         this.foodqty = foodqty;
     }
-    
+
     /**
      *
      * @param plane
      * @return
      */
     @Override
-    public NextCheck Handle(Plane plane) 
+    public NextCheck Handle(Plane plane)
     {
         {
-        
-            
-        if(plane.getMaxFood()-plane.getFoodQty() < foodqty)
-        {
-           return this; 
+
+            if (plane.getMaxFood() - plane.getFoodQty() < foodqty)
+            {
+                return this;
+            } else if (next != null)
+            {
+                return next.Handle(plane);
+            } else
+            {
+                return null;
+            }
         }
-        else if(next != null) 
-        {
-           return next.Handle(plane);
-        }
-        else
-        {
-            return null;
-        }
+
     }
-        
-    }
+
     @Override
-    public void AddNext(Chainable next) 
+    public void AddNext(Chainable next)
     {
-        if(next instanceof Catering)
+        if (next instanceof Catering)
         {
             this.next = next;
         }

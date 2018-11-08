@@ -11,21 +11,23 @@ package chain;
  */
 public abstract class NextCheck implements Chainable
 {
-   String location ; 
-   Chainable next;
 
-    public Chainable getNext() {
+    String location;
+    Chainable next;
+
+    public Chainable getNext()
+    {
         return next;
     }
-   
+
     /**
      *
      * @param next
      */
     @Override
-    public void AddNext(Chainable next) 
+    public void AddNext(Chainable next)
     {
         this.next = next;
     }
-   
+
 }

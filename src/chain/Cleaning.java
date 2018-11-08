@@ -12,38 +12,36 @@ package chain;
 public class Cleaning extends NextCheck
 {
 
-    
     CleaningEnum r;
 
-    public Cleaning(CleaningEnum r) {
+    public Cleaning(CleaningEnum r)
+    {
         this.r = r;
     }
-    
+
     @Override
-    
-    
-    public NextCheck Handle(Plane plane) 
-    
+
+    public NextCheck Handle(Plane plane)
+
     {
         {
-        if(r == plane.getCleaning())
-        {
-           return this; 
-        }
-        else if(next != null) 
-        {
-           return next.Handle(plane);
-        }
-        else
-        {
-            return null;
-        }
+            if (r == plane.getCleaning())
+            {
+                return this;
+            } else if (next != null)
+            {
+                return next.Handle(plane);
+            } else
+            {
+                return null;
+            }
         }
     }
+
     @Override
-    public void AddNext(Chainable next) 
+    public void AddNext(Chainable next)
     {
-        if(next instanceof Cleaning)
+        if (next instanceof Cleaning)
         {
             this.next = next;
         }

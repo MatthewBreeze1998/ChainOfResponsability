@@ -17,8 +17,8 @@ import static org.junit.Assert.*;
  *
  * @author Matty
  */
-public class TestMaintenanceHandler {
-    
+public class TestMaintenanceHandler
+{
 
     @Test
     public void addFuelToChain()
@@ -27,14 +27,14 @@ public class TestMaintenanceHandler {
         Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Low);
         Maintenance maintenance3 = new Maintenance(MaintenanceEnum.Medium);
         Maintenance maintenance4 = new Maintenance(MaintenanceEnum.severe);
-        
+
         maintenance1.AddNext(maintenance2);
         maintenance2.AddNext(maintenance3);
         maintenance3.AddNext(maintenance4);
-        
+
         Maintenance maintenanceExpected = maintenance4;
         Maintenance maintenanceActual = (Maintenance) maintenance3.getNext();
-        
+
         assertEquals(maintenanceExpected, maintenanceActual);
     }
 

@@ -9,12 +9,11 @@ package chain;
  *
  * @author Matty
  */
-public enum MaintenanceEnum 
+public enum MaintenanceEnum
 {
-  Low, 
-  Medium, 
-  High, 
-  severe   
-
+    Low,
+    Medium,
+    High,
+    severe
 
 }

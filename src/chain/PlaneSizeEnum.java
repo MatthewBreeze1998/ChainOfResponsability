@@ -9,7 +9,7 @@ package chain;
  *
  * @author Matty
  */
-public enum PlaneSizeEnum 
+public enum PlaneSizeEnum
 {
     Small,
     Medium,

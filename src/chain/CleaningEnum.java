@@ -5,16 +5,15 @@ package chain;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Matty
  */
-public enum CleaningEnum 
+public enum CleaningEnum
 {
-light,
-medium,
-heavy,
-biorisk
+    light,
+    medium,
+    heavy,
+    biorisk
 
 }

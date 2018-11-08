@@ -9,12 +9,11 @@ package chain;
  *
  * @author Matty
  */
-public enum FuelEnum 
+public enum FuelEnum
 {
-Jetfuel ,
-Kerosenegasoline,
-Aviationgasoline,
-Biokerosene
-
+    Jetfuel,
+    Kerosenegasoline,
+    Aviationgasoline,
+    Biokerosene
 
 }
