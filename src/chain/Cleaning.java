@@ -40,4 +40,12 @@ public class Cleaning extends NextCheck
         }
         }
     }
+    @Override
+    public void AddNext(Chainable next) 
+    {
+        if(next instanceof Cleaning)
+        {
+            this.next = next;
+        }
+    }
 }

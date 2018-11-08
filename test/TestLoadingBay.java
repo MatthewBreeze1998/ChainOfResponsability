@@ -60,7 +60,7 @@ public class TestLoadingBay {
         assertEquals(rampExpected, rampActual);
     }
         @Test
-   public void getFuel() {
+         public void getFuel() {
         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
         
         Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
@@ -75,37 +75,38 @@ public class TestLoadingBay {
         DeliveryVehicles manager = new DeliveryVehicles(null, null, fuel1, null, null);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
+        
         Arc.handlePlane(p);
-        Fuel fuelExpected = fuel1;
+        Fuel fuelExpected = fuel2;
         Fuel fuelActual = bay.getfuel();
 
-        //assertEquals(fuelExpected, fuelActual);
+        assertEquals(fuelExpected, fuelActual);
         
     
    }
-
+         @Test
         public void getMaintenance(){
          Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
          
-         Maintenance Maintenance1 = new Maintenance(MaintenanceEnum.High);
-         Maintenance Maintenance2 = new Maintenance(MaintenanceEnum.Medium);
-         Maintenance Maintenance3 = new Maintenance(MaintenanceEnum.severe);
-         Maintenance Maintenance4 = new Maintenance(MaintenanceEnum.Low);
+         Maintenance maintenance1 = new Maintenance(MaintenanceEnum.High);
+         Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Medium);
+         Maintenance maintenance3 = new Maintenance(MaintenanceEnum.severe);
+         Maintenance maintenance4 = new Maintenance(MaintenanceEnum.Low);
         
-         Maintenance1.AddNext(Maintenance2);
-         Maintenance2.AddNext(Maintenance3);
-         Maintenance3.AddNext(Maintenance4);
+         maintenance1.AddNext(maintenance2);
+         maintenance2.AddNext(maintenance3);
+         maintenance3.AddNext(maintenance4);
                 
-        DeliveryVehicles manager = new DeliveryVehicles(null, null, null, Maintenance1, null);
+        DeliveryVehicles manager = new DeliveryVehicles(null, null, null, maintenance1, null);
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
         Arc.handlePlane(p);
-        Maintenance maintenanceExpected = Maintenance1;
+        Maintenance maintenanceExpected = maintenance2;
         Maintenance maintenanceActual = bay.getMaintenance();
 
         assertEquals(maintenanceExpected, maintenanceActual); 
         }
-        
+        @Test
         public void getCleaning(){
           Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);  
        
@@ -122,7 +123,7 @@ public class TestLoadingBay {
         LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
         Arc.setFirstLoadingBay(bay);
         Arc.handlePlane(p);
-        Cleaning CleaningExpected = Cleaning1;
+        Cleaning CleaningExpected = Cleaning3;
         Cleaning CleaningActual = bay.getCleaning();
 
         assertEquals(CleaningExpected, CleaningActual);

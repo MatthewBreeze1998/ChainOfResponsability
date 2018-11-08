@@ -12,15 +12,25 @@ package chain;
 public class Arc {
 
     static LoadingBay FirstLoadingBay;
+    
+    
+ 
 
+   
+    
     public static void setFirstLoadingBay(LoadingBay FirstLoadingBay) {
         Arc.FirstLoadingBay = FirstLoadingBay;
     }
-
+  
+  
+    
     public static void handlePlane(Plane plane) {
         if (FirstLoadingBay != null) {
+            
             LoadingBay fl = (LoadingBay) FirstLoadingBay.Handle(plane);
+
             fl.getVehicals();
+            
         }
 
     }

@@ -29,7 +29,7 @@ public class Fuel extends NextCheck
     public NextCheck Handle(Plane plane) 
     {
         
-        if(plane.getFuel() < 100)
+        //if(plane.getFuel() < 100)
        {
             if(r == plane.getFuelType())
             {
@@ -44,17 +44,13 @@ public class Fuel extends NextCheck
                 return null;
             }
         }
-       else
-      {
-           return null;
-       }
+      // else
+     // {
+         //  return null;
+       //}
         
     
     }
-    
-    
-
-    
     @Override
     public void AddNext(Chainable next) 
     {
@@ -63,7 +59,4 @@ public class Fuel extends NextCheck
             this.next = next;
         }
     }
-      
-    
-    
 }

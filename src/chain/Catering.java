@@ -36,5 +36,12 @@ public class Catering extends NextCheck
     }
         
     }
-    
+    @Override
+    public void AddNext(Chainable next) 
+    {
+        if(next instanceof Catering)
+        {
+            this.next = next;
+        }
+    }
 }

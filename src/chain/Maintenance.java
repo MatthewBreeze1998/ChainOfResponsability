@@ -17,6 +17,8 @@ public class Maintenance extends NextCheck
     public Maintenance(MaintenanceEnum r) {
         this.r = r;
     }
+
+ 
     
     
     @Override
@@ -37,5 +39,12 @@ public class Maintenance extends NextCheck
         }
     }
     }
-    
+    @Override
+    public void AddNext(Chainable next) 
+    {
+        if(next instanceof Maintenance)
+        {
+            this.next = next;
+        }
+    }
 }
