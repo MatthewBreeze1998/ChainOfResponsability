@@ -14,7 +14,92 @@ public class Chain
 
     public static void main(String[] args) 
     {
- 
+        
+        public void sim(){
+        LoadingBay Bay1 = new LoadingBay(LoadingBayEnum.Small);
+        LoadingBay Bay2 = new LoadingBay(LoadingBayEnum.large);
+
+        Bay1.AddNext(Bay2);
+
+        LoadingBay bayExpected = Bay2;
+
+        LoadingBay bayActual = (LoadingBay) Bay1.getNext();
+
+   
+
+    
+
+        Ramp ramp1 = new Ramp(RampEnum.Open);
+        Ramp ramp2 = new Ramp(RampEnum.Closed);
+
+        ramp1.AddNext(ramp2);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Ramp rampExpected = ramp1;
+        Ramp rampActual = bay.getRamp();
+
+        
+        
+        Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
+        Fuel fuel2 = new Fuel(FuelEnum.Biokerosene);
+        Fuel fuel3 = new Fuel(FuelEnum.Jetfuel);
+        Fuel fuel4 = new Fuel(FuelEnum.Kerosenegasoline);
+
+        fuel1.AddNext(fuel2);
+        fuel2.AddNext(fuel3);
+        fuel3.AddNext(fuel4);
+        
+        
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        Arc.setFirstLoadingBay(bay);
+        
+        Arc.handlePlane(p);
+        Fuel fuelExpected = fuel2;
+        Fuel fuelActual = bay.getfuel();
+
+       
+        
+    
+   }
+         
+        
+         
+         Maintenance maintenance1 = new Maintenance(MaintenanceEnum.High);
+         Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Medium);
+         Maintenance maintenance3 = new Maintenance(MaintenanceEnum.severe);
+         Maintenance maintenance4 = new Maintenance(MaintenanceEnum.Low);
+        
+         maintenance1.AddNext(maintenance2);
+         maintenance2.AddNext(maintenance3);
+         maintenance3.AddNext(maintenance4);
+                
+        
+       
+        Maintenance maintenanceExpected = maintenance2;
+        Maintenance maintenanceActual = bay.getMaintenance();
+
+     
+        
+      
+          
+       
+         Cleaning Cleaning1 = new Cleaning(CleaningEnum.biorisk);
+         Cleaning Cleaning2 = new Cleaning(CleaningEnum.heavy);
+         Cleaning Cleaning3 = new Cleaning(CleaningEnum.light);
+         Cleaning Cleaning4 = new Cleaning(CleaningEnum.medium);
+         
+         Cleaning1.AddNext(Cleaning2);
+         Cleaning2.AddNext(Cleaning3);
+         Cleaning3.AddNext(Cleaning4);
+         
+        
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Cleaning CleaningExpected = Cleaning3;
+        Cleaning CleaningActual = bay.getCleaning();
+
+}
+        
     }
     
 }
