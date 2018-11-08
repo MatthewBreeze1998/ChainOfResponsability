@@ -11,7 +11,11 @@ package chain;
  */
 public class Arc {
 
-    static LoadingBay FirstLoadingBay;
+    static LoadingBay FirstLoadingBay; 
+    /*
+    * creates link to loading bay
+    * allowes acces to first loading bay and allow the chainto start
+    */
     
     
  
@@ -20,15 +24,22 @@ public class Arc {
     
     public static void setFirstLoadingBay(LoadingBay FirstLoadingBay) {
         Arc.FirstLoadingBay = FirstLoadingBay;
+    
+        /*
+        * sets first loading bad
+        */
     }
   
   
     
-    public static void handlePlane(Plane plane) {
-        if (FirstLoadingBay != null) {
-            
+    public static void handlePlane(Plane plane) 
+    {
+       if (FirstLoadingBay != null) {
+            /*
+        * checks loading bays is not empty
+        */
             LoadingBay fl = (LoadingBay) FirstLoadingBay.Handle(plane);
-
+            
             fl.getVehicals();
             
         }

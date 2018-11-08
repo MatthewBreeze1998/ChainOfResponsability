@@ -16,12 +16,13 @@ public class Plane
     private  int fuel;
     private FuelEnum fuelType;
     private int foodQty;
+    private int maxFood; 
     private  RampEnum rampType;
     private MaintenanceEnum maintenance;
     private CleaningEnum cleaning;
 
    
-    public Plane(PlaneSizeEnum planeSize, int fuel, FuelEnum fuelType, int foodQty, RampEnum rampType, MaintenanceEnum maintenance, CleaningEnum cleaning) {
+    public Plane(PlaneSizeEnum planeSize, int fuel, FuelEnum fuelType, int foodQty, RampEnum rampType, MaintenanceEnum maintenance, CleaningEnum cleaning,int maxFood) {
         this.planeSize = planeSize;
         this.fuel = fuel;
         this.fuelType = fuelType;
@@ -29,6 +30,15 @@ public class Plane
         this.rampType = rampType;
         this.maintenance = maintenance;
         this.cleaning = cleaning;
+        this.maxFood = maxFood;
+    }
+
+    public int getMaxFood() {
+        return maxFood;
+    }
+
+    public void setMaxFood(int maxFood) {
+        this.maxFood = maxFood;
     }
 
    

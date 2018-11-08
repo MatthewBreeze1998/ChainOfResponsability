@@ -12,6 +12,12 @@ package chain;
 public class Catering extends NextCheck
 {
 
+    int foodqty;
+
+    public Catering(int foodqty) {
+        this.foodqty = foodqty;
+    }
+    
     /**
      *
      * @param plane
@@ -21,7 +27,9 @@ public class Catering extends NextCheck
     public NextCheck Handle(Plane plane) 
     {
         {
-        if(plane.getFoodQty() < 100)
+        
+            
+        if(plane.getMaxFood()-plane.getFoodQty() < foodqty)
         {
            return this; 
         }

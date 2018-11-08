@@ -5,6 +5,7 @@
  */
 
 import chain.Arc;
+import chain.Catering;
 import chain.Cleaning;
 import chain.CleaningEnum;
 import chain.DeliveryVehicles;
@@ -43,7 +44,7 @@ public class TestLoadingBay {
 
     @Test
     public void GetRamp() {
-        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);
 
         Ramp ramp1 = new Ramp(RampEnum.Open);
         Ramp ramp2 = new Ramp(RampEnum.Closed);
@@ -61,7 +62,7 @@ public class TestLoadingBay {
     }
         @Test
          public void getFuel() {
-        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light, 23);
         
         Fuel fuel1 = new Fuel(FuelEnum.Aviationgasoline);
         Fuel fuel2 = new Fuel(FuelEnum.Biokerosene);
@@ -86,7 +87,7 @@ public class TestLoadingBay {
    }
          @Test
         public void getMaintenance(){
-         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);
+         Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);
          
          Maintenance maintenance1 = new Maintenance(MaintenanceEnum.High);
          Maintenance maintenance2 = new Maintenance(MaintenanceEnum.Medium);
@@ -108,7 +109,7 @@ public class TestLoadingBay {
         }
         @Test
         public void getCleaning(){
-          Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light);  
+          Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);  
        
          Cleaning Cleaning1 = new Cleaning(CleaningEnum.biorisk);
          Cleaning Cleaning2 = new Cleaning(CleaningEnum.heavy);
@@ -128,6 +129,26 @@ public class TestLoadingBay {
 
         assertEquals(CleaningExpected, CleaningActual);
         }
+        @Test
+        public void geCatering()
+        {
+        Plane p = new Plane(PlaneSizeEnum.large, 35, FuelEnum.Biokerosene, 67, RampEnum.Open, MaintenanceEnum.Medium, CleaningEnum.light,23);     
+        Catering catering1 = new Catering(57);
+        Catering catering2 = new Catering(100);
+
+        catering1.AddNext(catering2);
+        
+        DeliveryVehicles manager = new DeliveryVehicles(null, null, null, null, catering1);
+        LoadingBay bay = new LoadingBay(LoadingBayEnum.large);
+        Arc.setFirstLoadingBay(bay);
+        Arc.handlePlane(p);
+        Catering cateringExpected = catering2;
+        Catering cateringActual = (Catering)catering1.getNext();
+        
+        assertEquals(cateringExpected, cateringActual);  
+        }
+        
+        
      
 }
 

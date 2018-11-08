@@ -20,8 +20,8 @@ public class TestCateringHandler {
 @Test    
 public void addCateringToCahin()
     {
-        Catering catering1 = new Catering();
-        Catering catering2 = new Catering();
+        Catering catering1 = new Catering(57);
+        Catering catering2 = new Catering(100);
 
         catering1.AddNext(catering2);
         
