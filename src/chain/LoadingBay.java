@@ -1,13 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * this calls is used to to paramertes and set them to a objects thats is then passed throw to the arc where they are used 
+ * to check the chain is working
  */
 package chain;
 
 /**
- * this calls is used to to paramertes and set them to a objects thats is then passed throw to the arc where they are used 
- * to check the chain is working
+ 
  * @author Matthew Breeze t7077260 
  */
 public class LoadingBay extends NextCheck

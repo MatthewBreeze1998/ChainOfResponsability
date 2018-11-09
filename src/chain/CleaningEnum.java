@@ -1,19 +1,36 @@
+/**
+ * cleaning enum types
+ */
 package chain;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * clenaing enum to all stats the plane could be in
  */
 /**
  *
- * @author Matty
+ * @author Matttew Breeze t7077260
  */
 public enum CleaningEnum
 {
+
+    /**
+     * light cleaning
+     */
     light,
+
+    /**
+     * medium cleaning
+     */
     medium,
+
+    /**
+     * heavy cleaning
+     */
     heavy,
+
+    /**
+     * biorisk cleaning
+     */
     biorisk
 
 }

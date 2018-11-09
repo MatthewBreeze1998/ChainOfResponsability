@@ -1,24 +1,33 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* Cleaning handler
+ * uses the Cleaning tpye enum to chcek the plane against the enum
+ * then adds next if not correct 
  */
 package chain;
 
 /**
  *
- * @author t7077260
+ * @author t7077260 Matthew breeze
  */
 public class Cleaning extends NextCheck
 {
-
+    
     CleaningEnum r;
 
+    /**
+     * constructor for cleaning enum
+     * @param r
+     */
     public Cleaning(CleaningEnum r)
     {
         this.r = r;
     }
 
+    /**
+     * this checks the planes cleaning state then checked with the vehicles 
+     * @param plane
+     * @return Cleaning 
+     */
     @Override
 
     public NextCheck Handle(Plane plane)

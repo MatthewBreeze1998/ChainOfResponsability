@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * hold maintenece tpye of a enum
  */
 package chain;
 
@@ -11,9 +9,25 @@ package chain;
  */
 public enum MaintenanceEnum
 {
+
+    /**
+     * maintenance needs low 
+     */
     Low,
+
+    /**
+     * maintenance needs medium 
+     */
     Medium,
+
+    /**
+     * maintenance needs high  
+     */
     High,
+
+    /**
+     * maintenance needs sever 
+     */
     severe
 
 }

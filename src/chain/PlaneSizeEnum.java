@@ -11,7 +11,19 @@ package chain;
  */
 public enum PlaneSizeEnum
 {
+
+    /**
+     * small plane
+     */
     Small,
+
+    /**
+     * medium plane
+     */
     Medium,
+
+    /**
+     * large plane
+     */
     large
 }

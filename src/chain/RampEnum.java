@@ -11,7 +11,15 @@ package chain;
  */
 public enum RampEnum
 {
+
+    /**
+     * closed gate
+     */
     Closed,
+
+    /**
+     * open gate
+     */
     Open
 
 }

@@ -1,13 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * to check get next vehicle
+ * add the next vehcial to the chain 
  */
 package chain;
 
 /**
  *
- * @author t7077260
+ * @author Matthew Breze t7077260
  */
 public abstract class NextCheck implements Chainable
 {
@@ -15,13 +14,17 @@ public abstract class NextCheck implements Chainable
     String location;
     Chainable next;
 
+    /**
+     * gets the next vehicle
+     * @return next vehicle in the chain for all the vehicle
+     */
     public Chainable getNext()
     {
         return next;
     }
 
     /**
-     *
+     * adds the next Vehicle to handler to be checked against the plane 
      * @param next
      */
     @Override

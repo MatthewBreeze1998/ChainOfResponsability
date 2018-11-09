@@ -1,13 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * gets and sets all the plane values and is ready to pass then as object plane
  */
 package chain;
 
 /**
  *
- * @author t7077260
+ * @author Matthew Breeze t7077260
  */
 public class Plane
 {
@@ -21,6 +19,17 @@ public class Plane
     private MaintenanceEnum maintenance;
     private CleaningEnum cleaning;
 
+    /**
+     *
+     * @param planeSize
+     * @param fuel
+     * @param fuelType
+     * @param foodQty
+     * @param rampType
+     * @param maintenance
+     * @param cleaning
+     * @param maxFood
+     */
     public Plane(PlaneSizeEnum planeSize, int fuel, FuelEnum fuelType, int foodQty, RampEnum rampType, MaintenanceEnum maintenance, CleaningEnum cleaning, int maxFood)
     {
         this.planeSize = planeSize;
@@ -33,18 +42,26 @@ public class Plane
         this.maxFood = maxFood;
     }
 
+    /**
+     *
+     * @return max food of plane
+     */
     public int getMaxFood()
     {
         return maxFood;
     }
 
+    /**
+     * sets the max fuel to the ammont
+     * @param maxFood
+     */
     public void setMaxFood(int maxFood)
     {
         this.maxFood = maxFood;
     }
 
     /**
-     * @return the fuel
+     * @return the fuel amount
      */
     public int getFuel()
     {
@@ -52,7 +69,7 @@ public class Plane
     }
 
     /**
-     * @param fuel the fuel to set
+     * @param fuel the fuel ammount
      */
     public void setFuel(int fuel)
     {
@@ -60,7 +77,7 @@ public class Plane
     }
 
     /**
-     * @return the fuelType
+     * @return the fuelType of plane
      */
     public FuelEnum getFuelType()
     {
@@ -68,7 +85,7 @@ public class Plane
     }
 
     /**
-     * @param fuelType the fuelType to set
+     * @param fuelType the fuelType to set plane fuel type
      */
     public void setFuelType(FuelEnum fuelType)
     {
@@ -100,7 +117,7 @@ public class Plane
     }
 
     /**
-     * @param rampType the rampType to set
+     * @param rampType the rampType to set type of ramp
      */
     public void setRampType(RampEnum rampType)
     {
@@ -139,11 +156,19 @@ public class Plane
         this.cleaning = cleaning;
     }
 
+    /**
+     *
+     * @return plane size enum
+     */
     public PlaneSizeEnum getPlaneSize()
     {
         return planeSize;
     }
 
+    /**
+     *
+     * @param planeSize set size of plane
+     */
     public void setPlaneSize(PlaneSizeEnum planeSize)
     {
         this.planeSize = planeSize;
